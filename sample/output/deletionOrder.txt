@@ -1,0 +1,13 @@
+Order Details
+EmployeeTerritories
+CustomerCustomerDemo
+Territories
+Orders
+Employees
+Products
+Shippers
+Regions
+CustomerDemographics
+Suppliers
+Categories
+Customers

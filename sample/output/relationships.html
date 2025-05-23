@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>/data/northwind.db.database</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="index.html" class="navbar-brand"><b>/data/northwind.db</b></a><span class="navbar-brand" style="padding-left: 0">.database</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>All Relationships</h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 class="box-title">Diagrams</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom">
+                                <!-- Tabs within a box -->
+                                <h5>By default only columns that are primary keys, foreign keys or indexes are shown.</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#compactDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact</a></li>
+                                    <li class=""><a href="#largeDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large</a></li>
+                                    <li class=""><a href="#compactimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact Implied</a></li>
+                                    <li class=""><a href="#largeimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large Implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="compactDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactRelationshipsDiagram" name="compactRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/CustomerDemographics.html" target="_top" title="CustomerDemographics" alt="" coords="264,5,563,123">
+<area shape="rect" id="node2" href="tables/Order_Details_548aaf30.html" target="_top" title="Order Details" alt="" coords="959,508,1163,655">
+<area shape="rect" id="node8" href="tables/Products.html" target="_top" title="Products" alt="" coords="663,732,858,908">
+<area shape="rect" id="node11" href="tables/Orders.html" target="_top" title="Orders" alt="" coords="666,249,855,455">
+<area shape="rect" id="node3" href="tables/Territories.html" target="_top" title="Territories" alt="" coords="297,597,529,744">
+<area shape="rect" id="node9" href="tables/Regions.html" target="_top" title="Regions" alt="" coords="5,627,220,744">
+<area shape="rect" id="node4" href="tables/Categories.html" target="_top" title="Categories" alt="" coords="322,896,505,1013">
+<area shape="rect" id="node5" href="tables/Shippers.html" target="_top" title="Shippers" alt="" coords="321,275,505,392">
+<area shape="rect" id="node6" href="tables/Customers.html" target="_top" title="Customers" alt="" coords="321,140,505,257">
+<area shape="rect" id="node7" href="tables/Employees.html" target="_top" title="Employees" alt="" coords="318,433,509,580">
+<area shape="rect" id="node13" href="tables/Suppliers.html" target="_top" title="Suppliers" alt="" coords="321,761,505,879">
+<area shape="rect" id="node10" href="tables/CustomerCustomerDemo.html" target="_top" title="CustomerCustomerDemo" alt="" coords="607,77,915,200">
+<area shape="rect" id="node12" href="tables/EmployeeTerritories.html" target="_top" title="EmployeeTerritories" alt="" coords="627,520,894,643">
+</map>
+                                        <a name='diagram'><img id="compactDegreeImg" src="diagrams/summary/relationships.real.compact.png" usemap="#compactRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeRelationshipsDiagram" name="largeRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/CustomerDemographics.html" target="_top" title="CustomerDemographics" alt="" coords="264,5,563,128">
+<area shape="rect" id="node2" href="tables/Order_Details_548aaf30.html" target="_top" title="Order Details" alt="" coords="959,961,1163,1172">
+<area shape="rect" id="node8" href="tables/Products.html" target="_top" title="Products" alt="" coords="663,1463,858,1820">
+<area shape="rect" id="node11" href="tables/Orders.html" target="_top" title="Orders" alt="" coords="666,488,855,963">
+<area shape="rect" id="node3" href="tables/Territories.html" target="_top" title="Territories" alt="" coords="297,1352,529,1504">
+<area shape="rect" id="node9" href="tables/Regions.html" target="_top" title="Regions" alt="" coords="5,1411,220,1533">
+<area shape="rect" id="node4" href="tables/Categories.html" target="_top" title="Categories" alt="" coords="322,1955,505,2136">
+<area shape="rect" id="node5" href="tables/Shippers.html" target="_top" title="Shippers" alt="" coords="321,549,505,701">
+<area shape="rect" id="node6" href="tables/Customers.html" target="_top" title="Customers" alt="" coords="321,145,505,532">
+<area shape="rect" id="node7" href="tables/Employees.html" target="_top" title="Employees" alt="" coords="318,743,509,1335">
+<area shape="rect" id="node13" href="tables/Suppliers.html" target="_top" title="Suppliers" alt="" coords="321,1521,505,1937">
+<area shape="rect" id="node10" href="tables/CustomerCustomerDemo.html" target="_top" title="CustomerCustomerDemo" alt="" coords="607,61,915,184">
+<area shape="rect" id="node12" href="tables/EmployeeTerritories.html" target="_top" title="EmployeeTerritories" alt="" coords="627,1208,894,1331">
+</map>
+                                        <a name='diagram'><img id="largeDegreeImg" src="diagrams/summary/relationships.real.large.png" usemap="#largeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="compactimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactImpliedRelationshipsDiagram" name="compactImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/CustomerDemographics.html" target="_top" title="CustomerDemographics" alt="" coords="264,95,563,212">
+<area shape="rect" id="node2" href="tables/Order_Details_548aaf30.html" target="_top" title="Order Details" alt="" coords="1030,927,1234,1073">
+<area shape="rect" id="node8" href="tables/Products.html" target="_top" title="Products" alt="" coords="663,1084,858,1260">
+<area shape="rect" id="node11" href="tables/Orders.html" target="_top" title="Orders" alt="" coords="666,396,855,601">
+<area shape="rect" id="node3" href="tables/Territories.html" target="_top" title="Territories" alt="" coords="297,697,529,844">
+<area shape="rect" id="node9" href="tables/Regions.html" target="_top" title="Regions" alt="" coords="5,727,220,844">
+<area shape="rect" id="node4" href="tables/Categories.html" target="_top" title="Categories" alt="" coords="322,1368,505,1485">
+<area shape="rect" id="node5" href="tables/Shippers.html" target="_top" title="Shippers" alt="" coords="321,563,505,680">
+<area shape="rect" id="node6" href="tables/Customers.html" target="_top" title="Customers" alt="" coords="321,240,505,357">
+<area shape="rect" id="node7" href="tables/Employees.html" target="_top" title="Employees" alt="" coords="318,399,509,545">
+<area shape="rect" id="node13" href="tables/Suppliers.html" target="_top" title="Suppliers" alt="" coords="321,1233,505,1351">
+<area shape="rect" id="node10" href="tables/CustomerCustomerDemo.html" target="_top" title="CustomerCustomerDemo" alt="" coords="607,65,915,188">
+<area shape="rect" id="node12" href="tables/EmployeeTerritories.html" target="_top" title="EmployeeTerritories" alt="" coords="627,667,894,789">
+<area shape="rect" id="node14" href="tables/ProductDetails_V.html" target="_top" title="ProductDetails_V" alt="" coords="1015,1201,1249,1353">
+<area shape="rect" id="node15" href="tables/Sales_Totals_by_Amount_ed1c1c04.html" target="_top" title="Sales Totals by Amount" alt="" coords="985,507,1279,600">
+<area shape="rect" id="node16" href="tables/Alphabetical_list_of_products_16d58c53.html" target="_top" title="Alphabetical list of products" alt="" coords="964,1371,1300,1523">
+<area shape="rect" id="node17" href="tables/Order_Details_Extended_48af1849.html" target="_top" title="Order Details Extended" alt="" coords="986,617,1278,740">
+<area shape="rect" id="node18" href="tables/Summary_of_Sales_by_Year_88b0c223.html" target="_top" title="Summary of Sales by Year" alt="" coords="973,175,1291,268">
+<area shape="rect" id="node19" href="tables/Current_Product_List_19440cd6.html" target="_top" title="Current Product List" alt="" coords="1000,1091,1264,1184">
+<area shape="rect" id="node20" href="tables/Summary_of_Sales_by_Quarter_45ad5706.html" target="_top" title="Summary of Sales by Quarter" alt="" coords="959,285,1305,379">
+<area shape="rect" id="node21" href="tables/Order_Subtotals_f344d55d.html" target="_top" title="Order Subtotals" alt="" coords="1020,396,1244,489">
+<area shape="rect" id="node22" href="tables/Sales_by_Category_c527e993.html" target="_top" title="Sales by Category" alt="" coords="639,1444,883,1537">
+<area shape="rect" id="node23" href="tables/Quarterly_Orders_f97a3ec.html" target="_top" title="Quarterly Orders" alt="" coords="644,241,877,335">
+<area shape="rect" id="node24" href="tables/Invoices.html" target="_top" title="Invoices" alt="" coords="1037,757,1227,909">
+<area shape="rect" id="node25" href="tables/Orders_Qry_a4db0ebd.html" target="_top" title="Orders Qry" alt="" coords="1037,5,1227,157">
+</map>
+                                        <a name='diagram'><img id="compactimpliedDegreeImg" src="diagrams/summary/relationships.implied.compact.png" usemap="#compactImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeImpliedRelationshipsDiagram" name="largeImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/CustomerDemographics.html" target="_top" title="CustomerDemographics" alt="" coords="264,357,563,480">
+<area shape="rect" id="node2" href="tables/Order_Details_548aaf30.html" target="_top" title="Order Details" alt="" coords="1030,2313,1234,2524">
+<area shape="rect" id="node8" href="tables/Products.html" target="_top" title="Products" alt="" coords="663,2461,858,2819">
+<area shape="rect" id="node11" href="tables/Orders.html" target="_top" title="Orders" alt="" coords="666,940,855,1415">
+<area shape="rect" id="node3" href="tables/Territories.html" target="_top" title="Territories" alt="" coords="297,1707,529,1859">
+<area shape="rect" id="node9" href="tables/Regions.html" target="_top" title="Regions" alt="" coords="5,1765,220,1888">
+<area shape="rect" id="node4" href="tables/Categories.html" target="_top" title="Categories" alt="" coords="322,3083,505,3264">
+<area shape="rect" id="node5" href="tables/Shippers.html" target="_top" title="Shippers" alt="" coords="321,1537,505,1689">
+<area shape="rect" id="node6" href="tables/Customers.html" target="_top" title="Customers" alt="" coords="321,500,505,887">
+<area shape="rect" id="node7" href="tables/Employees.html" target="_top" title="Employees" alt="" coords="318,928,509,1520">
+<area shape="rect" id="node13" href="tables/Suppliers.html" target="_top" title="Suppliers" alt="" coords="321,2649,505,3065">
+<area shape="rect" id="node10" href="tables/CustomerCustomerDemo.html" target="_top" title="CustomerCustomerDemo" alt="" coords="607,328,915,451">
+<area shape="rect" id="node12" href="tables/EmployeeTerritories.html" target="_top" title="EmployeeTerritories" alt="" coords="627,1643,894,1765">
+<area shape="rect" id="node14" href="tables/ProductDetails_V.html" target="_top" title="ProductDetails_V" alt="" coords="1015,2657,1249,3108">
+<area shape="rect" id="node15" href="tables/Sales_Totals_by_Amount_ed1c1c04.html" target="_top" title="Sales Totals by Amount" alt="" coords="985,1056,1279,1213">
+<area shape="rect" id="node16" href="tables/Alphabetical_list_of_products_16d58c53.html" target="_top" title="Alphabetical list of products" alt="" coords="964,3125,1300,3488">
+<area shape="rect" id="node17" href="tables/Order_Details_Extended_48af1849.html" target="_top" title="Order Details Extended" alt="" coords="986,1231,1278,1476">
+<area shape="rect" id="node18" href="tables/Summary_of_Sales_by_Year_88b0c223.html" target="_top" title="Summary of Sales by Year" alt="" coords="973,649,1291,777">
+<area shape="rect" id="node19" href="tables/Current_Product_List_19440cd6.html" target="_top" title="Current Product List" alt="" coords="1000,2541,1264,2640">
+<area shape="rect" id="node20" href="tables/Summary_of_Sales_by_Quarter_45ad5706.html" target="_top" title="Summary of Sales by Quarter" alt="" coords="959,795,1305,923">
+<area shape="rect" id="node21" href="tables/Order_Subtotals_f344d55d.html" target="_top" title="Order Subtotals" alt="" coords="1020,940,1244,1039">
+<area shape="rect" id="node22" href="tables/Sales_by_Category_c527e993.html" target="_top" title="Sales by Category" alt="" coords="639,3159,883,3316">
+<area shape="rect" id="node23" href="tables/Quarterly_Orders_f97a3ec.html" target="_top" title="Quarterly Orders" alt="" coords="644,504,877,661">
+<area shape="rect" id="node24" href="tables/Invoices.html" target="_top" title="Invoices" alt="" coords="1037,1493,1227,2296">
+<area shape="rect" id="node25" href="tables/Orders_Qry_a4db0ebd.html" target="_top" title="Orders Qry" alt="" coords="1037,5,1227,632">
+</map>
+                                        <a name='diagram'><img id="largeimpliedDegreeImg" src="diagrams/summary/relationships.implied.large.png" usemap="#largeImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="relationships.js"></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>

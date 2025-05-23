@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="UTF-8"?><database name="/data/northwind.db" schema="database" type="SQLite - 3.36.0">
+   <tables>
+      <table name="Alphabetical list of products" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="ProductID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="ProductID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Products"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="ProductName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="SupplierID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="SupplierID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Suppliers"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="CategoryID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="CategoryID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Categories"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="4" name="QuantityPerUnit" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="5" name="UnitPrice" nullable="true" remarks="" size="2000000000" type="NUMERIC" typeCode="6"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="6" name="UnitsInStock" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="7" name="UnitsOnOrder" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="8" name="ReorderLevel" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="9" name="Discontinued" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="10" name="CategoryName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+      </table>
+      <table name="Categories" numRows="8" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="10" id="0" name="CategoryID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <child column="CategoryID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Alphabetical list of products"/>
+            <child column="CategoryID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="ProductDetails_V"/>
+            <child column="CategoryID" foreignKey="" implied="false" onDeleteCascade="false" table="Products"/>
+            <child column="CategoryID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Sales by Category"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="CategoryName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="Description" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="Picture" nullable="true" remarks="" size="2000000000" type="BLOB" typeCode="12"/>
+         <primaryKey column="CategoryID" sequenceNumberInPK="1"/>
+         <index name="Categories_s_pk" unique="true">
+            <column ascending="true" name="CategoryID"/>
+         </index>
+      </table>
+      <table name="Category Sales for 1997" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="CategoryName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="CategorySales" nullable="true" remarks="" size="2000000000" type="" typeCode="12"/>
+      </table>
+      <table name="Current Product List" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="ProductID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="ProductID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Products"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="ProductName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+      </table>
+      <table name="Customer and Suppliers by City" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="City" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="CompanyName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="ContactName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="Relationship" nullable="true" remarks="" size="2000000000" type="" typeCode="12"/>
+      </table>
+      <table name="CustomerCustomerDemo" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="CustomerID" nullable="false" remarks="" size="2000000000" type="TEXT" typeCode="12">
+            <parent column="CustomerID" foreignKey="" implied="false" onDeleteCascade="false" table="Customers"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="CustomerTypeID" nullable="false" remarks="" size="2000000000" type="TEXT" typeCode="12">
+            <parent column="CustomerTypeID" foreignKey="" implied="false" onDeleteCascade="false" table="CustomerDemographics"/>
+         </column>
+         <primaryKey column="CustomerID" sequenceNumberInPK="1"/>
+         <primaryKey column="CustomerTypeID" sequenceNumberInPK="2"/>
+         <index name="CustomerCustomerDemo_s_pk" unique="true">
+            <column ascending="true" name="CustomerID"/>
+            <column ascending="true" name="CustomerTypeID"/>
+         </index>
+         <index name="sqlite_autoindex_CustomerCustomerDemo_1" unique="true">
+            <column ascending="true" name="CustomerID"/>
+            <column ascending="true" name="CustomerTypeID"/>
+         </index>
+      </table>
+      <table name="CustomerDemographics" numRows="0" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="CustomerTypeID" nullable="false" remarks="" size="2000000000" type="TEXT" typeCode="12">
+            <child column="CustomerTypeID" foreignKey="" implied="false" onDeleteCascade="false" table="CustomerCustomerDemo"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="CustomerDesc" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <primaryKey column="CustomerTypeID" sequenceNumberInPK="1"/>
+         <index name="CustomerDemographics_s_pk" unique="true">
+            <column ascending="true" name="CustomerTypeID"/>
+         </index>
+         <index name="sqlite_autoindex_CustomerDemographics_1" unique="true">
+            <column ascending="true" name="CustomerTypeID"/>
+         </index>
+      </table>
+      <table name="Customers" numRows="93" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="CustomerID" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12">
+            <child column="CustomerID" foreignKey="" implied="false" onDeleteCascade="false" table="CustomerCustomerDemo"/>
+            <child column="CustomerID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Invoices"/>
+            <child column="CustomerID" foreignKey="" implied="false" onDeleteCascade="false" table="Orders"/>
+            <child column="CustomerID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Orders Qry"/>
+            <child column="CustomerID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Quarterly Orders"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="CompanyName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="ContactName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="ContactTitle" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="4" name="Address" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="5" name="City" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="6" name="Region" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="7" name="PostalCode" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="8" name="Country" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="9" name="Phone" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="10" name="Fax" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <primaryKey column="CustomerID" sequenceNumberInPK="1"/>
+         <index name="Customers_s_pk" unique="true">
+            <column ascending="true" name="CustomerID"/>
+         </index>
+         <index name="sqlite_autoindex_Customers_1" unique="true">
+            <column ascending="true" name="CustomerID"/>
+         </index>
+      </table>
+      <table name="Employees" numRows="9" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="10" id="0" name="EmployeeID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <child column="ReportsTo" foreignKey="" implied="false" onDeleteCascade="false" table="Employees"/>
+            <child column="EmployeeID" foreignKey="" implied="false" onDeleteCascade="false" table="EmployeeTerritories"/>
+            <child column="EmployeeID" foreignKey="" implied="false" onDeleteCascade="false" table="Orders"/>
+            <child column="EmployeeID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Orders Qry"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="LastName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="FirstName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="Title" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="4" name="TitleOfCourtesy" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="5" name="BirthDate" nullable="true" remarks="" size="2000000000" type="DATE" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="6" name="HireDate" nullable="true" remarks="" size="2000000000" type="DATE" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="7" name="Address" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="8" name="City" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="9" name="Region" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="10" name="PostalCode" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="11" name="Country" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="12" name="HomePhone" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="13" name="Extension" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="14" name="Photo" nullable="true" remarks="" size="2000000000" type="BLOB" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="15" name="Notes" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="16" name="ReportsTo" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="EmployeeID" foreignKey="" implied="false" onDeleteCascade="false" table="Employees"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="17" name="PhotoPath" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <primaryKey column="EmployeeID" sequenceNumberInPK="1"/>
+         <index name="Employees_s_pk" unique="true">
+            <column ascending="true" name="EmployeeID"/>
+         </index>
+      </table>
+      <table name="EmployeeTerritories" numRows="49" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="EmployeeID" nullable="false" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="EmployeeID" foreignKey="" implied="false" onDeleteCascade="false" table="Employees"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="TerritoryID" nullable="false" remarks="" size="2000000000" type="TEXT" typeCode="12">
+            <parent column="TerritoryID" foreignKey="" implied="false" onDeleteCascade="false" table="Territories"/>
+         </column>
+         <primaryKey column="EmployeeID" sequenceNumberInPK="1"/>
+         <primaryKey column="TerritoryID" sequenceNumberInPK="2"/>
+         <index name="EmployeeTerritories_s_pk" unique="true">
+            <column ascending="true" name="EmployeeID"/>
+            <column ascending="true" name="TerritoryID"/>
+         </index>
+         <index name="sqlite_autoindex_EmployeeTerritories_1" unique="true">
+            <column ascending="true" name="EmployeeID"/>
+            <column ascending="true" name="TerritoryID"/>
+         </index>
+      </table>
+      <table name="Invoices" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="ShipName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="ShipAddress" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="ShipCity" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="ShipRegion" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="4" name="ShipPostalCode" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="5" name="ShipCountry" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="6" name="CustomerID" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12">
+            <parent column="CustomerID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Customers"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="7" name="CustomerName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="8" name="Address" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="9" name="City" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="10" name="Region" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="11" name="PostalCode" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="12" name="Country" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="13" name="Salesperson" nullable="true" remarks="" size="2000000000" type="" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="14" name="OrderID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="OrderID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Orders"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="15" name="OrderDate" nullable="true" remarks="" size="2000000000" type="DATETIME" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="16" name="RequiredDate" nullable="true" remarks="" size="2000000000" type="DATETIME" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="17" name="ShippedDate" nullable="true" remarks="" size="2000000000" type="DATETIME" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="18" name="ShipperName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="19" name="ProductID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="ProductID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Products"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="20" name="ProductName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="21" name="UnitPrice" nullable="true" remarks="" size="2000000000" type="NUMERIC" typeCode="6"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="22" name="Quantity" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="23" name="Discount" nullable="true" remarks="" size="2000000000" type="REAL" typeCode="6"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="24" name="ExtendedPrice" nullable="true" remarks="" size="2000000000" type="" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="25" name="Freight" nullable="true" remarks="" size="2000000000" type="NUMERIC" typeCode="6"/>
+      </table>
+      <table name="Order Details" numRows="609283" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="OrderID" nullable="false" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="OrderID" foreignKey="" implied="false" onDeleteCascade="false" table="Orders"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="ProductID" nullable="false" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="ProductID" foreignKey="" implied="false" onDeleteCascade="false" table="Products"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0" digits="10" id="2" name="UnitPrice" nullable="false" remarks="" size="2000000000" type="NUMERIC" typeCode="6"/>
+         <column autoUpdated="false" defaultValue="1" digits="10" id="3" name="Quantity" nullable="false" remarks="" size="2000000000" type="INTEGER" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="0" digits="10" id="4" name="Discount" nullable="false" remarks="" size="2000000000" type="REAL" typeCode="6"/>
+         <primaryKey column="OrderID" sequenceNumberInPK="1"/>
+         <primaryKey column="ProductID" sequenceNumberInPK="2"/>
+         <index name="Order Details_s_pk" unique="true">
+            <column ascending="true" name="OrderID"/>
+            <column ascending="true" name="ProductID"/>
+         </index>
+         <index name="sqlite_autoindex_Order Details_1" unique="true">
+            <column ascending="true" name="OrderID"/>
+            <column ascending="true" name="ProductID"/>
+         </index>
+      </table>
+      <table name="Order Details Extended" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="OrderID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="OrderID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Orders"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="ProductID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="ProductID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Products"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="ProductName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="UnitPrice" nullable="true" remarks="" size="2000000000" type="NUMERIC" typeCode="6"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="4" name="Quantity" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="5" name="Discount" nullable="true" remarks="" size="2000000000" type="REAL" typeCode="6"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="6" name="ExtendedPrice" nullable="true" remarks="" size="2000000000" type="" typeCode="12"/>
+      </table>
+      <table name="Order Subtotals" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="OrderID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="OrderID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Orders"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="Subtotal" nullable="true" remarks="" size="2000000000" type="" typeCode="12"/>
+      </table>
+      <table name="Orders" numRows="16282" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="10" id="0" name="OrderID" nullable="false" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <child column="OrderID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Invoices"/>
+            <child column="OrderID" foreignKey="" implied="false" onDeleteCascade="false" table="Order Details"/>
+            <child column="OrderID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Order Details Extended"/>
+            <child column="OrderID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Order Subtotals"/>
+            <child column="OrderID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Orders Qry"/>
+            <child column="OrderID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Sales Totals by Amount"/>
+            <child column="OrderID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Summary of Sales by Quarter"/>
+            <child column="OrderID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Summary of Sales by Year"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="CustomerID" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12">
+            <parent column="CustomerID" foreignKey="" implied="false" onDeleteCascade="false" table="Customers"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="EmployeeID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="EmployeeID" foreignKey="" implied="false" onDeleteCascade="false" table="Employees"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="OrderDate" nullable="true" remarks="" size="2000000000" type="DATETIME" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="4" name="RequiredDate" nullable="true" remarks="" size="2000000000" type="DATETIME" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="5" name="ShippedDate" nullable="true" remarks="" size="2000000000" type="DATETIME" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="6" name="ShipVia" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="ShipperID" foreignKey="" implied="false" onDeleteCascade="false" table="Shippers"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0" digits="10" id="7" name="Freight" nullable="true" remarks="" size="2000000000" type="NUMERIC" typeCode="6"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="8" name="ShipName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="9" name="ShipAddress" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="10" name="ShipCity" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="11" name="ShipRegion" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="12" name="ShipPostalCode" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="13" name="ShipCountry" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <primaryKey column="OrderID" sequenceNumberInPK="1"/>
+         <index name="Orders_s_pk" unique="true">
+            <column ascending="true" name="OrderID"/>
+         </index>
+      </table>
+      <table name="Orders Qry" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="OrderID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="OrderID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Orders"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="CustomerID" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12">
+            <parent column="CustomerID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Customers"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="EmployeeID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="EmployeeID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Employees"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="OrderDate" nullable="true" remarks="" size="2000000000" type="DATETIME" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="4" name="RequiredDate" nullable="true" remarks="" size="2000000000" type="DATETIME" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="5" name="ShippedDate" nullable="true" remarks="" size="2000000000" type="DATETIME" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="6" name="ShipVia" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="7" name="Freight" nullable="true" remarks="" size="2000000000" type="NUMERIC" typeCode="6"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="8" name="ShipName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="9" name="ShipAddress" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="10" name="ShipCity" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="11" name="ShipRegion" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="12" name="ShipPostalCode" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="13" name="ShipCountry" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="14" name="CompanyName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="15" name="Address" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="16" name="City" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="17" name="Region" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="18" name="PostalCode" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="19" name="Country" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+      </table>
+      <table name="Product Sales for 1997" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="CategoryName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="ProductName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="ProductSales" nullable="true" remarks="" size="2000000000" type="" typeCode="12"/>
+      </table>
+      <table name="ProductDetails_V" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="ProductID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="ProductID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Products"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="ProductName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="SupplierID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="SupplierID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Suppliers"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="CategoryID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="CategoryID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Categories"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="4" name="QuantityPerUnit" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="5" name="UnitPrice" nullable="true" remarks="" size="2000000000" type="NUMERIC" typeCode="6"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="6" name="UnitsInStock" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="7" name="UnitsOnOrder" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="8" name="ReorderLevel" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="9" name="Discontinued" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="10" name="CategoryName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="11" name="CategoryDescription" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="12" name="SupplierName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="13" name="SupplierRegion" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+      </table>
+      <table name="Products" numRows="77" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="10" id="0" name="ProductID" nullable="false" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <child column="ProductID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Alphabetical list of products"/>
+            <child column="ProductID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Current Product List"/>
+            <child column="ProductID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Invoices"/>
+            <child column="ProductID" foreignKey="" implied="false" onDeleteCascade="false" table="Order Details"/>
+            <child column="ProductID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Order Details Extended"/>
+            <child column="ProductID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="ProductDetails_V"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="ProductName" nullable="false" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="SupplierID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="SupplierID" foreignKey="" implied="false" onDeleteCascade="false" table="Suppliers"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="CategoryID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="CategoryID" foreignKey="" implied="false" onDeleteCascade="false" table="Categories"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="4" name="QuantityPerUnit" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="0" digits="10" id="5" name="UnitPrice" nullable="true" remarks="" size="2000000000" type="NUMERIC" typeCode="6"/>
+         <column autoUpdated="false" defaultValue="0" digits="10" id="6" name="UnitsInStock" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="0" digits="10" id="7" name="UnitsOnOrder" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="0" digits="10" id="8" name="ReorderLevel" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="'0'" digits="10" id="9" name="Discontinued" nullable="false" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <primaryKey column="ProductID" sequenceNumberInPK="1"/>
+         <index name="Products_s_pk" unique="true">
+            <column ascending="true" name="ProductID"/>
+         </index>
+      </table>
+      <table name="Products Above Average Price" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="ProductName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="UnitPrice" nullable="true" remarks="" size="2000000000" type="NUMERIC" typeCode="6"/>
+      </table>
+      <table name="Products by Category" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="CategoryName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="ProductName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="QuantityPerUnit" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="UnitsInStock" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="4" name="Discontinued" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+      </table>
+      <table name="Quarterly Orders" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="CustomerID" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12">
+            <parent column="CustomerID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Customers"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="CompanyName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="City" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="Country" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+      </table>
+      <table name="Regions" numRows="4" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="RegionID" nullable="false" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <child column="RegionID" foreignKey="" implied="false" onDeleteCascade="false" table="Territories"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="RegionDescription" nullable="false" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <primaryKey column="RegionID" sequenceNumberInPK="1"/>
+         <index name="Regions_s_pk" unique="true">
+            <column ascending="true" name="RegionID"/>
+         </index>
+      </table>
+      <table name="Sales by Category" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="CategoryID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="CategoryID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Categories"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="CategoryName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="ProductName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="ProductSales" nullable="true" remarks="" size="2000000000" type="" typeCode="12"/>
+      </table>
+      <table name="Sales Totals by Amount" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="SaleAmount" nullable="true" remarks="" size="2000000000" type="" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="OrderID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="OrderID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Orders"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="CompanyName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="ShippedDate" nullable="true" remarks="" size="2000000000" type="DATETIME" typeCode="12"/>
+      </table>
+      <table name="Shippers" numRows="3" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="10" id="0" name="ShipperID" nullable="false" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <child column="ShipVia" foreignKey="" implied="false" onDeleteCascade="false" table="Orders"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="CompanyName" nullable="false" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="Phone" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <primaryKey column="ShipperID" sequenceNumberInPK="1"/>
+         <index name="Shippers_s_pk" unique="true">
+            <column ascending="true" name="ShipperID"/>
+         </index>
+      </table>
+      <table name="Summary of Sales by Quarter" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="ShippedDate" nullable="true" remarks="" size="2000000000" type="DATETIME" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="OrderID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="OrderID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Orders"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="Subtotal" nullable="true" remarks="" size="2000000000" type="" typeCode="12"/>
+      </table>
+      <table name="Summary of Sales by Year" numRows="0" remarks="" type="VIEW">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="ShippedDate" nullable="true" remarks="" size="2000000000" type="DATETIME" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="OrderID" nullable="true" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="OrderID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Orders"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="Subtotal" nullable="true" remarks="" size="2000000000" type="" typeCode="12"/>
+      </table>
+      <table name="Suppliers" numRows="29" remarks="" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="10" id="0" name="SupplierID" nullable="false" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <child column="SupplierID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="Alphabetical list of products"/>
+            <child column="SupplierID" foreignKey="Implied Constraint" implied="true" onDeleteCascade="false" table="ProductDetails_V"/>
+            <child column="SupplierID" foreignKey="" implied="false" onDeleteCascade="false" table="Products"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="CompanyName" nullable="false" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="ContactName" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="3" name="ContactTitle" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="4" name="Address" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="5" name="City" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="6" name="Region" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="7" name="PostalCode" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="8" name="Country" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="9" name="Phone" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="10" name="Fax" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="11" name="HomePage" nullable="true" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <primaryKey column="SupplierID" sequenceNumberInPK="1"/>
+         <index name="Suppliers_s_pk" unique="true">
+            <column ascending="true" name="SupplierID"/>
+         </index>
+      </table>
+      <table name="Territories" numRows="53" remarks="" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="10" id="0" name="TerritoryID" nullable="false" remarks="" size="2000000000" type="TEXT" typeCode="12">
+            <child column="TerritoryID" foreignKey="" implied="false" onDeleteCascade="false" table="EmployeeTerritories"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="1" name="TerritoryDescription" nullable="false" remarks="" size="2000000000" type="TEXT" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="10" id="2" name="RegionID" nullable="false" remarks="" size="2000000000" type="INTEGER" typeCode="4">
+            <parent column="RegionID" foreignKey="" implied="false" onDeleteCascade="false" table="Regions"/>
+         </column>
+         <primaryKey column="TerritoryID" sequenceNumberInPK="1"/>
+         <index name="Territories_s_pk" unique="true">
+            <column ascending="true" name="TerritoryID"/>
+         </index>
+         <index name="sqlite_autoindex_Territories_1" unique="true">
+            <column ascending="true" name="TerritoryID"/>
+         </index>
+      </table>
+   </tables>
+</database>
